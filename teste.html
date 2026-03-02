@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino Michael</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="container-full">
+        <div class="card-login">
+            <h1>🎰 Michael's Palace</h1>
+            <input type="text" id="user" placeholder="Usuário">
+            <input type="password" id="pass" placeholder="Senha">
+            <button onclick="logar()">Acessar</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="container-full" style="display: none;">
+        <div class="lobby">
+            <header class="placar">
+                <h2>Saldo: <span id="saldo">R$ 50.000,00</span></h2>
+                <div class="abas">
+                    <button onclick="abrirJogo('dados')">🎲 Dados</button>
+                    <button onclick="abrirJogo('roleta')">🎡 Roleta</button>
+                </div>
+            </header>
+
+            <div id="jogo-dados" class="box-jogo">
+                <h3>Dados: Par ou Ímpar</h3>
+                <div class="dados-area">
+                    <div id="d1" class="dado">?</div>
+                    <div id="d2" class="dado">?</div>
+                </div>
+                <input type="number" id="aposta-dados" placeholder="Valor da Aposta">
+                <div class="controles">
+                    <button onclick="jogarDados('par')" class="btn-acao">PAR</button>
+                    <button onclick="jogarDados('impar')" class="btn-acao">ÍMPAR</button>
+                </div>
+            </div>
+
+            <div id="jogo-roleta" class="box-jogo" style="display:none;">
+                <h3>Roleta</h3>
+                <div class="roleta-container">
+                    <div id="roleta-img" class="emoji-roleta">🎡</div>
+                </div>
+                <input type="number" id="aposta-roleta" placeholder="Valor da Aposta">
+                <div class="controles">
+                    <button onclick="jogarRoleta('vermelho')" class="btn-vermelho">Vermelho</button>
+                    <button onclick="jogarRoleta('preto')" class="btn-preto">Preto</button>
+                </div>
+            </div>
+            
+            <p id="msg-resultado" style="font-weight: bold; margin-top: 15px; min-height: 20px;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
